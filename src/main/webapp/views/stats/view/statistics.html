@@ -1,0 +1,49 @@
+<div>
+    
+    <div class="input-group">
+        <div class="input-group-btn">
+            <span>
+	            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+	                <span ng-if="query.qType == ''">Select criteria type</span>
+		            <span ng-hide="query.qType == ''">{{query.qType}}</span>
+		            <span class="caret"></span>
+	           </button>
+	            <ul class="dropdown-menu">
+			        <li><a href="#"></a></li>
+			        <li><a ng-click="setType('By category')" href="#">By category</a></li>
+			        <li><a ng-click="setType('By word')"     href="#">By word</a></li>
+			        <li role="separator" class="divider"></li>
+			        <li><a ng-click="setType('All')"      href="#">All words</a></li>
+		        </ul>
+	        </span>
+            
+            <span ng-if="query.qType == 'By category'">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+		           <span ng-if="query.qWhat == ''">Category</span>
+		           <span ng-hide="query.qWhat == ''">{{query.qWhat}}</span>
+		           <span class="caret"></span>
+	           </button>
+	            <ul class="dropdown-menu">
+		          <li ng-repeat="(cat, regex) in categories.data" ng-click="setQuery(cat)"><a href="#">{{cat}}</a></li>
+		        </ul>
+	        </span>
+            <input ng-if="query.qType == 'By word'" type="text" ng-model="query.qWhat" class="form-control" placeholder="Query for word...">
+	        <button class="btn btn-default" type="button" ng-click="getResults()">Show...</button>
+
+	      </div><!-- /btn-group -->
+        
+        
+    </div>
+    
+    
+    
+    <div ng-if="results.success == true">
+        
+        <div class="list-group">
+            <a ng-repeat="(word, count) in results.data" class="list-group-item" href="#">{{word}}<span class="badge">{{count}}</span></a>
+        </div>
+        
+    </div>
+    
+    
+</div>

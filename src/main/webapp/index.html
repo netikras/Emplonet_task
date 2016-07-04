@@ -1,0 +1,70 @@
+<html>
+    <head>
+        
+    </head>
+        
+        <script type="text/javascript" src="resources/styles/bootstrap/js/jquery.js"></script>
+        
+        <link rel="stylesheet" href="resources/styles/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="resources/styles/bootstrap/css/bootstrap-theme.css">
+        <script type="text/javascript" src="resources/styles/bootstrap/js/bootstrap.min.js"></script>
+        
+        <script type="text/javascript" src="resources/scripts/ng/angular-1.4.5/angular.min.js"></script>
+        <script type="text/javascript" src="resources/scripts/ng/additional/angular-ui-router.js"></script>
+        
+        
+        <script type="text/javascript" src="views/main/application.js"></script>
+        <script type="text/javascript" src="views/main/main_directive_fileModel.js"></script>
+        <script type="text/javascript" src="views/main/services/main_service.js"></script>
+        <script type="text/javascript" src="views/main/controller/main_controller.js"></script>
+        
+        
+        
+        <script type="text/javascript" src="views/stats/services/statistics-service.js"></script>
+        <script type="text/javascript" src="views/stats/controller/statistics-controller.js"></script>
+        
+        <script type="text/javascript" src="views/upload/service/uploader-service.js"></script>
+        <script type="text/javascript" src="views/upload/controller/uploader-controller.js"></script>
+        
+        
+        
+        <script type="text/javascript" src="views/main/router_main.js"></script>
+        
+        
+        
+        
+    <body ng-app="app-emplonet">
+
+	    <div ng-controller="mainController">
+		    
+		    
+		    <nav class="container navbar navbar-inverse" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#top-menu">
+                         <span class="icon-bar"></span>
+                         <span class="icon-bar"></span>
+                         <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" ui-sref='#'>EmploNET</a>
+                </div>
+                <div id="top-menu" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a ui-sref="home">Home</a></li>
+                        <li><a ui-sref="stats">Statistics</a></li>
+                        <li><a ui-sref="upload">Upload</a></li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <div class="container jumbotron">
+                <div class="row">
+                   <div class="col-sm-9" ><div ui-view="middle"></div></div>
+                </div>
+            </div>
+		    
+		    
+	    </div>
+    
+    </body>
+
+</html>

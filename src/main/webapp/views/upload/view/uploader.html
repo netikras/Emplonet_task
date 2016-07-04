@@ -1,0 +1,20 @@
+<div>
+    <input type="file" file-model="filesToUpload" multiple/>
+    <div class="container list-group">
+	    <div ng-repeat="file in filesToUpload">
+	        <a class="list-group-item" href="#">{{file.name}}</a>
+        </div>
+        <button type="button" class="btn btn-default" ng-click="uploadFile()" >Upload</button>
+        <button type="button" class="btn btn-default" ng-click="saveChanges()" >Save to disk</button>
+    </div>
+    
+     <div ng-if="results.success == true">
+        
+        <div class="list-group">
+            <a class="list-group-item active readonly">Uploaded successfully</a>
+            <a ng-repeat="(word, count) in results.data" class="list-group-item" href="#">{{word}}<span class="badge">{{count}}</span></a>
+        </div>
+        
+    </div>
+    
+</div>
