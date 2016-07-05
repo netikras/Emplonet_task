@@ -1,5 +1,8 @@
 <div>
-    <input type="file" file-model="filesToUpload" multiple/>
+    <label class="btn btn-default btn-file" >
+        Select files
+        <input type="file" file-model="filesToUpload" multiple style="display:none"/>
+    </label>
     <div class="container list-group">
 	    <div ng-repeat="file in filesToUpload">
 	        <a class="list-group-item" href="#">{{file.name}}</a>
